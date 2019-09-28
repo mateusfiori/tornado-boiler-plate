@@ -1,9 +1,12 @@
 import tornado.web
+from handlers.BaseHandler import BaseHandler
 
-class MainHandler(tornado.web.RequestHandler):
+class MainHandler(BaseHandler):
     
+    SUPPORTED_METHODS = ['GET']
+
     def initialize(self, **kwargs):
         self.db = kwargs.get('db')
 
     def get(self):
-        self.write("Hello, world")
+        self.send_response({"Hello": "World"})
