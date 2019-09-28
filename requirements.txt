@@ -1,4 +1,2 @@
-pika
-tornado
-motor
-mongoengine
+tornado==6.0.3
+motor==1.2.1
