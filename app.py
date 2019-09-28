@@ -20,8 +20,7 @@ class Application(tornado.web.Application):
 
         tornado.web.Application.__init__(self, handlers)
 
-if __name__ == "__main__":
-    
+if __name__ == "__main__":    
     # Mongo DB
     database_string = 'mongodb://localhost:27017'
     client = motor.motor_tornado.MotorClient(database_string)
@@ -29,7 +28,5 @@ if __name__ == "__main__":
     
     app = tornado.httpserver.HTTPServer(Application())
     app.listen(8888)
-
-    print('Sender server running...')
 
     tornado.ioloop.IOLoop.current().start()
